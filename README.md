@@ -6,7 +6,7 @@ I study data analitics.
 
 
 
-# my skills include:
+### my skills include:
 
 sql
 
