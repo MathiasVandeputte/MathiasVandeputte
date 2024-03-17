@@ -14,5 +14,7 @@ python (pandas)
 
 excel
 
+power BI
+
 
 
