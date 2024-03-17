@@ -2,21 +2,8 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 1,
-   "id": "72f9e5c2-60e0-4d36-9aeb-a50cae77208f",
-   "metadata": {
-    "tags": []
-   },
-   "outputs": [],
-   "source": [
-    "import warnings\n",
-    "warnings.filterwarnings('ignore')"
-   ]
-  },
-  {
-   "cell_type": "code",
    "execution_count": 2,
-   "id": "8fd4cda9-97ec-4325-844e-58fa4b9ccc8c",
+   "id": "1b5cb82a-de5a-46b2-83e5-a429fa16d0f7",
    "metadata": {
     "tags": []
    },
@@ -29,7 +16,7 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "8aa5ded9-66eb-4e6e-9086-7bac9d427179",
+   "id": "583e1e78-691e-4bcd-8266-7aeb73c4f6ef",
    "metadata": {
     "tags": []
    },
@@ -52,205 +39,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
-   "id": "49d6c1ab-ac8c-4e73-b1b1-091c7a585863",
-   "metadata": {
-    "tags": []
-   },
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>host_id</th>\n",
-       "      <th>host_name</th>\n",
-       "      <th>host_since</th>\n",
-       "      <th>host_location</th>\n",
-       "      <th>host_response_time</th>\n",
-       "      <th>host_acceptance_rate</th>\n",
-       "      <th>host_is_superhost</th>\n",
-       "      <th>host_listings_count</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>0</th>\n",
-       "      <td>234077</td>\n",
-       "      <td>Karin</td>\n",
-       "      <td>2010-09-14</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>96%</td>\n",
-       "      <td>t</td>\n",
-       "      <td>4</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1</th>\n",
-       "      <td>586942</td>\n",
-       "      <td>Gina</td>\n",
-       "      <td>2011-05-14</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>97%</td>\n",
-       "      <td>t</td>\n",
-       "      <td>1</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2</th>\n",
-       "      <td>1167377</td>\n",
-       "      <td>Geert</td>\n",
-       "      <td>2011-09-16</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>42%</td>\n",
-       "      <td>f</td>\n",
-       "      <td>1</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>3</th>\n",
-       "      <td>1263933</td>\n",
-       "      <td>Kristien</td>\n",
-       "      <td>2011-10-08</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>100%</td>\n",
-       "      <td>t</td>\n",
-       "      <td>1</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>4</th>\n",
-       "      <td>1754396</td>\n",
-       "      <td>Marleen</td>\n",
-       "      <td>2012-02-15</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>87%</td>\n",
-       "      <td>t</td>\n",
-       "      <td>1</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>...</th>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "      <td>...</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2224</th>\n",
-       "      <td>397964818</td>\n",
-       "      <td>Marnix</td>\n",
-       "      <td>2021-04-21</td>\n",
-       "      <td>Berlaar, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>100%</td>\n",
-       "      <td>f</td>\n",
-       "      <td>2</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2225</th>\n",
-       "      <td>362003916</td>\n",
-       "      <td>יואל</td>\n",
-       "      <td>2020-08-12</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>within a few hours</td>\n",
-       "      <td>67%</td>\n",
-       "      <td>f</td>\n",
-       "      <td>2</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2226</th>\n",
-       "      <td>165436938</td>\n",
-       "      <td>Luca</td>\n",
-       "      <td>2018-01-02</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>99%</td>\n",
-       "      <td>f</td>\n",
-       "      <td>203</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2227</th>\n",
-       "      <td>165436938</td>\n",
-       "      <td>Luca</td>\n",
-       "      <td>2018-01-02</td>\n",
-       "      <td>Antwerp, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>99%</td>\n",
-       "      <td>f</td>\n",
-       "      <td>203</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2228</th>\n",
-       "      <td>29314978</td>\n",
-       "      <td>Martine</td>\n",
-       "      <td>2015-03-14</td>\n",
-       "      <td>Harelbeke, Belgium</td>\n",
-       "      <td>within an hour</td>\n",
-       "      <td>100%</td>\n",
-       "      <td>t</td>\n",
-       "      <td>2</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "<p>2229 rows × 8 columns</p>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "        host_id host_name  host_since       host_location  host_response_time  \\\n",
-       "0        234077     Karin  2010-09-14    Antwerp, Belgium      within an hour   \n",
-       "1        586942      Gina  2011-05-14    Antwerp, Belgium      within an hour   \n",
-       "2       1167377     Geert  2011-09-16    Antwerp, Belgium                 NaN   \n",
-       "3       1263933  Kristien  2011-10-08    Antwerp, Belgium      within an hour   \n",
-       "4       1754396   Marleen  2012-02-15    Antwerp, Belgium      within an hour   \n",
-       "...         ...       ...         ...                 ...                 ...   \n",
-       "2224  397964818    Marnix  2021-04-21    Berlaar, Belgium      within an hour   \n",
-       "2225  362003916      יואל  2020-08-12                 NaN  within a few hours   \n",
-       "2226  165436938      Luca  2018-01-02    Antwerp, Belgium      within an hour   \n",
-       "2227  165436938      Luca  2018-01-02    Antwerp, Belgium      within an hour   \n",
-       "2228   29314978   Martine  2015-03-14  Harelbeke, Belgium      within an hour   \n",
-       "\n",
-       "     host_acceptance_rate host_is_superhost  host_listings_count  \n",
-       "0                     96%                 t                    4  \n",
-       "1                     97%                 t                    1  \n",
-       "2                     42%                 f                    1  \n",
-       "3                    100%                 t                    1  \n",
-       "4                     87%                 t                    1  \n",
-       "...                   ...               ...                  ...  \n",
-       "2224                 100%                 f                    2  \n",
-       "2225                  67%                 f                    2  \n",
-       "2226                  99%                 f                  203  \n",
-       "2227                  99%                 f                  203  \n",
-       "2228                 100%                 t                    2  \n",
-       "\n",
-       "[2229 rows x 8 columns]"
-      ]
-     },
-     "execution_count": 4,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "execution_count": null,
+   "id": "9d4cb853-d14a-4135-b104-6374960b32cb",
+   "metadata": {},
+   "outputs": [],
    "source": [
     "#Eerst en vooral gaan we kijken naar de dataframe wat er allemaal opgeschoont dient te worden\n",
     "\n",
@@ -259,8 +51,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
-   "id": "0891dd05-e8a3-41f2-bf20-ec39fb211179",
+   "execution_count": 4,
+   "id": "3b39c753-ec57-4095-af53-0a81bebd0086",
    "metadata": {
     "tags": []
    },
@@ -274,8 +66,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
-   "id": "19485b1a-9dba-41c5-a3b1-fc9216d23026",
+   "execution_count": 5,
+   "id": "655aa536-a6e4-44ae-8004-a9973cd6647a",
    "metadata": {
     "tags": []
    },
@@ -305,8 +97,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
-   "id": "221cbd91-cfb7-43a4-aff4-5a5636b8f771",
+   "execution_count": 6,
+   "id": "9c0b12ef-9864-4b10-b946-099a9df83880",
    "metadata": {
     "tags": []
    },
@@ -320,8 +112,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
-   "id": "79778b1e-44c8-4adf-8ff8-9d56dfa953b3",
+   "execution_count": 7,
+   "id": "90d31720-9cf0-4457-a542-db0ce90e4f7b",
    "metadata": {
     "tags": []
    },
@@ -339,8 +131,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
-   "id": "73d0cc92-94ab-4d41-81a7-2dda82d50dc8",
+   "execution_count": 8,
+   "id": "ec8154ed-35de-4b83-aeb4-2c97d19f98a8",
    "metadata": {
     "tags": []
    },
@@ -360,8 +152,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
-   "id": "a1c5fcdb-e812-4632-a74c-b14b103be926",
+   "execution_count": 9,
+   "id": "0415e9a7-4aa2-4dde-8906-e685acbdc83d",
    "metadata": {
     "tags": []
    },
@@ -377,8 +169,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
-   "id": "c640efa6-eb48-44fd-9844-379e342cb6ef",
+   "execution_count": 10,
+   "id": "5abedb79-161a-4351-a9dc-6e3609dc7790",
    "metadata": {
     "tags": []
    },
@@ -392,8 +184,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
-   "id": "5f8680e7-468b-4229-abfd-0fa353243b0a",
+   "execution_count": 11,
+   "id": "a04e4c70-d2f6-42a6-841d-b95b843dbe3a",
    "metadata": {
     "tags": []
    },
@@ -407,8 +199,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
-   "id": "50a9ce65-51b8-4c10-813a-03a0f33b5886",
+   "execution_count": 12,
+   "id": "cacadc1a-b1f0-4c71-971f-c29e289e330b",
    "metadata": {
     "tags": []
    },
@@ -427,8 +219,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
-   "id": "fdcc22d0-f462-4e96-9aaf-7b2634e51138",
+   "execution_count": 13,
+   "id": "a289d9e0-9435-4aa6-97cc-3078e777cb11",
    "metadata": {
     "tags": []
    },
@@ -441,8 +233,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
-   "id": "0aa3b072-e1fc-4978-8f97-e69db62c4c90",
+   "execution_count": 18,
+   "id": "e1635790-879a-403c-9472-4f71e5898fc9",
    "metadata": {
     "tags": []
    },
@@ -675,7 +467,7 @@
        "[1361 rows x 9 columns]"
       ]
      },
-     "execution_count": 15,
+     "execution_count": 18,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -687,8 +479,8 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
-   "id": "35e0f269-4e35-430a-9c32-69e2457f042d",
+   "execution_count": 14,
+   "id": "581a772f-8770-4f18-a658-6dab34c10aca",
    "metadata": {
     "tags": []
    },
@@ -698,14 +490,6 @@
     "\n",
     "df.to_csv('AirBNB_data_cleaned.csv',index=False)"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "367ef6f0-8172-49b3-9103-8081ca9efd19",
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
