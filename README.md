@@ -2,7 +2,7 @@
 
 I'm Mathias Vandeputte,
 
-I study data analitics.
+I study data analytics.
 
 
 
