@@ -8,13 +8,13 @@ I study data analytics.
 
 ### my skills include:
 
-sql
+Sql
 
-python (pandas)
+Python (pandas)
 
-excel
+Excel
 
-power BI
+Power BI
 
 ### languages
 
