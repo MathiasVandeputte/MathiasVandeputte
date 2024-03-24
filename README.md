@@ -16,5 +16,9 @@ excel
 
 power BI
 
+### languages
 
+Dutch
+English
+French (limited knowledge)
 
